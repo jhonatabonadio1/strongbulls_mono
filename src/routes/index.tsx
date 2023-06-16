@@ -1,8 +1,8 @@
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import React from 'react';
-import { useTheme } from 'styled-components';
+import {useTheme} from 'styled-components';
 
-import { AuthRoutes } from './auth.routes';
+import {AuthRoutes} from './auth.routes';
 
 export function Routes() {
   const theme: any = useTheme();

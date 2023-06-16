@@ -1,9 +1,9 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 
-import { SignIn } from '../screens/SignIn';
+import {SignIn} from '../screens/SignIn';
 
-const { Navigator, Screen } = createStackNavigator();
+const {Navigator, Screen} = createStackNavigator();
 
 const options = {
   headerShown: false,
