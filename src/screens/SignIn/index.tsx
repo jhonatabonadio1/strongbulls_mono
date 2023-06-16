@@ -1,7 +1,14 @@
 import React from 'react';
+import {SafeAreaView} from 'react-native';
 
-import {Container} from './styles';
+import {Container, Title} from './styles';
 
 export function SignIn() {
-  return <Container />;
+  return (
+    <SafeAreaView>
+      <Container>
+        <Title>Olá Mundo</Title>
+      </Container>
+    </SafeAreaView>
+  );
 }

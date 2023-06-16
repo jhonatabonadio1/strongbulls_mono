@@ -8,10 +8,10 @@ export default {
   },
 
   fonts: {
-    light: 'Poppins-Light',
-    regular: 'Poppins-Regular',
-    medium: 'Poppins-Medium',
-    semibold: 'Poppins-SemiBold',
-    bold: 'Poppins-Bold',
+    light: 'Poppins_300Light',
+    regular: 'Poppins_400Regular',
+    medium: 'Poppins_500Medium',
+    semibold: 'Poppins_600SemiBold',
+    bold: 'Poppins_700Bold',
   },
 };
