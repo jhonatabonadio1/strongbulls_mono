@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "strongbulls_mono",
+    "slug": "strongbulls_mono",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
