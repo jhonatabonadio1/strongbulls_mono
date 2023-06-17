@@ -328,6 +328,7 @@
 				);
 				INFOPLIST_FILE = strongbullsmono/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = StrongBulls;
+				"INFOPLIST_KEY_CFBundleDisplayName[sdk=iphoneos*]" = StrongBulls;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -356,6 +357,7 @@
 				DEVELOPMENT_TEAM = 29FQJGRT4Y;
 				INFOPLIST_FILE = strongbullsmono/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = StrongBulls;
+				"INFOPLIST_KEY_CFBundleDisplayName[sdk=iphoneos*]" = StrongBulls;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
