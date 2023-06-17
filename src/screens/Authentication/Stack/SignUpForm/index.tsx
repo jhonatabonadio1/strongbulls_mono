@@ -1,4 +1,3 @@
-import {format} from 'date-fns';
 import React, {useState} from 'react';
 import {
   Keyboard,
@@ -7,26 +6,14 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import DatePicker from 'react-native-date-picker';
-import {useTheme} from 'styled-components';
+import {RFValue} from 'react-native-responsive-fontsize';
 
-import {
-  Container,
-  Form,
-  InputGroup,
-  Label,
-  InputContainer,
-  Input,
-  Content,
-  Footer,
-  DateInput,
-  DateInputContainer,
-} from './styles';
+import {Container, Form, Content, Footer} from './styles';
 import {Button} from '../../../../components/interface/Forms/Button';
+import {DateInput} from '../../../../components/interface/Forms/DateInput';
+import {Input} from '../../../../components/interface/Forms/Input';
 
 export function SignUpForm() {
-  const theme = useTheme();
-
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
 
@@ -40,66 +27,48 @@ export function SignUpForm() {
             <Content>
               <Form>
                 <Animatable.View animation="fadeInLeft" duration={300}>
-                  <InputGroup>
-                    <Label>Qual o seu nome?</Label>
-                    <InputContainer>
-                      <Input
-                        placeholder="Nome completo"
-                        placeholderTextColor={theme.colors.comment}
-                      />
-                    </InputContainer>
-                  </InputGroup>
+                  <Input
+                    label="Qual o seu nome?"
+                    placeholder="Nome completo"
+                    style={{marginBottom: RFValue(12)}}
+                  />
                 </Animatable.View>
                 <Animatable.View
                   animation="fadeInLeft"
                   duration={300}
                   delay={300}>
-                  <InputGroup>
-                    <Label>E o seu e-mail?</Label>
-                    <InputContainer>
-                      <Input
-                        placeholder="E-mail"
-                        autoCapitalize="none"
-                        keyboardType="email-address"
-                        placeholderTextColor={theme.colors.comment}
-                      />
-                    </InputContainer>
-                  </InputGroup>
+                  <Input
+                    label="E o seu e-mail?"
+                    placeholder="E-mail"
+                    autoCapitalize="none"
+                    keyboardType="email-address"
+                    style={{marginBottom: RFValue(12)}}
+                  />
                 </Animatable.View>
                 <Animatable.View
                   animation="fadeInLeft"
                   duration={300}
                   delay={600}>
-                  <InputGroup>
-                    <Label>E sua data de nascimento?</Label>
-                    <DateInputContainer
-                      activeOpacity={1}
-                      onPress={() => setOpen(true)}>
-                      <DateInput>{format(date, 'dd/MM/yyyy')}</DateInput>
-                      <DatePicker
-                        modal
-                        open={open}
-                        date={date}
-                        mode="date"
-                        onConfirm={date => {
-                          setOpen(false);
-                          setDate(date);
-                        }}
-                        onCancel={() => {
-                          setOpen(false);
-                        }}
-                      />
-                    </DateInputContainer>
-                  </InputGroup>
+                  <DateInput
+                    date={date}
+                    open={open}
+                    onPress={() => setOpen(true)}
+                    style={{marginBottom: RFValue(12)}}
+                    label="E sua data de nascimento?"
+                    onConfirm={date => {
+                      setOpen(false);
+                      setDate(date);
+                    }}
+                    onCancel={() => {
+                      setOpen(false);
+                    }}
+                  />
                 </Animatable.View>
                 <Animatable.View
                   animation="fadeInLeft"
                   duration={300}
-                  delay={900}>
-                  <InputGroup>
-                    <Label>E qual seu gênero?</Label>
-                  </InputGroup>
-                </Animatable.View>
+                  delay={900}
+                />
               </Form>
             </Content>
           </Container>

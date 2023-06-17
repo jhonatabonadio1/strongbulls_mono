@@ -7,24 +7,20 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {useTheme} from 'styled-components';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 import {
   Container,
   Form,
-  InputGroup,
-  Label,
-  InputContainer,
-  Input,
   Content,
   ForgotPasswordButton,
   ForgotPasswordButtonText,
   Footer,
 } from './styles';
 import {Button} from '../../../../../components/interface/Forms/Button';
+import {Input} from '../../../../../components/interface/Forms/Input';
 
 export function SignInForm() {
-  const theme = useTheme();
   const navigation = useNavigation();
 
   return (
@@ -37,32 +33,26 @@ export function SignInForm() {
             <Content>
               <Form>
                 <Animatable.View animation="fadeInLeft" duration={300}>
-                  <InputGroup>
-                    <Label>Qual o seu e-mail?</Label>
-                    <InputContainer>
-                      <Input
-                        placeholder="E-mail"
-                        autoCapitalize="none"
-                        keyboardType="email-address"
-                        placeholderTextColor={theme.colors.comment}
-                      />
-                    </InputContainer>
-                  </InputGroup>
+                  <Input
+                    label="Qual seu e-mail?"
+                    placeholder="E-mail"
+                    autoCapitalize="none"
+                    keyboardType="email-address"
+                    style={{marginBottom: RFValue(12)}}
+                  />
                 </Animatable.View>
                 <Animatable.View
                   animation="fadeInLeft"
                   duration={300}
                   delay={300}>
-                  <InputGroup>
-                    <Label>E a sua senha?</Label>
-                    <InputContainer>
-                      <Input
-                        placeholder="Senha"
-                        secureTextEntry
-                        placeholderTextColor={theme.colors.comment}
-                      />
-                    </InputContainer>
-                  </InputGroup>
+                  <Input
+                    label="E sua senha?"
+                    placeholder="Senha"
+                    autoCapitalize="none"
+                    passwordInput
+                    keyboardType="email-address"
+                    style={{marginBottom: RFValue(12)}}
+                  />
                 </Animatable.View>
                 <Animatable.View
                   animation="fadeInLeft"
