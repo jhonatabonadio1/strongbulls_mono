@@ -7,7 +7,9 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {useTheme} from 'styled-components';
 
 import {SignIn} from '../screens/Authentication/Stack/SignIn';
+import {ForgotPassword} from '../screens/Authentication/Stack/SignIn/Forgot';
 import {SignInForm} from '../screens/Authentication/Stack/SignIn/SignInForm';
+import {SignUpForm} from '../screens/Authentication/Stack/SignUpForm';
 const {Navigator, Screen} = createStackNavigator();
 
 const options = {
@@ -58,6 +60,22 @@ export function AuthRoutes() {
         options={{
           ...headerStyle,
           headerTitle: 'Login',
+        }}
+      />
+      <Screen
+        name="ForgotPassword"
+        component={ForgotPassword}
+        options={{
+          ...headerStyle,
+          headerTitle: 'Esqueceu a senha?',
+        }}
+      />
+      <Screen
+        name="SignUpForm"
+        component={SignUpForm}
+        options={{
+          ...headerStyle,
+          headerTitle: 'Seus dados',
         }}
       />
     </Navigator>

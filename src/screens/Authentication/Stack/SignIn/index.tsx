@@ -42,7 +42,7 @@ export function SignIn() {
         <UserActions>
           <Button
             title="Abrir conta"
-            action={() => {}}
+            action={() => navigation.navigate('SignUpForm')}
             enabled
             style={{marginBottom: RFValue(12)}}
           />

@@ -35,15 +35,6 @@ export const Input = styled.TextInput`
   font-size: ${RFValue(12)}px;
 `;
 
-export const ForgotPasswordButton = styled.TouchableOpacity`
-  margin-bottom: ${RFValue(20)}px;
-`;
-export const ForgotPasswordButtonText = styled.Text`
-  color: ${({theme}) => theme.colors.comment};
-  font-family: ${({theme}) => theme.fonts.semibold};
-  font-size: ${RFValue(12)}px;
-`;
-
 export const Footer = styled.View`
   justify-content: center;
   align-items: center;
