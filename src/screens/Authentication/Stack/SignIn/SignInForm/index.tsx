@@ -6,6 +6,7 @@ import {
   Platform,
   TouchableWithoutFeedback,
 } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 import {useTheme} from 'styled-components';
 
 import {
@@ -35,41 +36,59 @@ export function SignInForm() {
           <Container>
             <Content>
               <Form>
-                <InputGroup>
-                  <Label>Qual o seu e-mail?</Label>
-                  <InputContainer>
-                    <Input
-                      placeholder="E-mail"
-                      autoCapitalize="none"
-                      keyboardType="email-address"
-                      placeholderTextColor={theme.colors.comment}
-                    />
-                  </InputContainer>
-                </InputGroup>
-                <InputGroup>
-                  <Label>E a sua senha?</Label>
-                  <InputContainer>
-                    <Input
-                      placeholder="Senha"
-                      secureTextEntry
-                      placeholderTextColor={theme.colors.comment}
-                    />
-                  </InputContainer>
-                </InputGroup>
-                <ForgotPasswordButton
-                  activeOpacity={1}
-                  onPress={() => navigation.navigate('ForgotPassword')}>
-                  <ForgotPasswordButtonText>
-                    Esqueceu a senha?
-                  </ForgotPasswordButtonText>
-                </ForgotPasswordButton>
+                <Animatable.View animation="fadeInLeft" duration={300}>
+                  <InputGroup>
+                    <Label>Qual o seu e-mail?</Label>
+                    <InputContainer>
+                      <Input
+                        placeholder="E-mail"
+                        autoCapitalize="none"
+                        keyboardType="email-address"
+                        placeholderTextColor={theme.colors.comment}
+                      />
+                    </InputContainer>
+                  </InputGroup>
+                </Animatable.View>
+                <Animatable.View
+                  animation="fadeInLeft"
+                  duration={300}
+                  delay={300}>
+                  <InputGroup>
+                    <Label>E a sua senha?</Label>
+                    <InputContainer>
+                      <Input
+                        placeholder="Senha"
+                        secureTextEntry
+                        placeholderTextColor={theme.colors.comment}
+                      />
+                    </InputContainer>
+                  </InputGroup>
+                </Animatable.View>
+                <Animatable.View
+                  animation="fadeInLeft"
+                  duration={300}
+                  delay={600}>
+                  <ForgotPasswordButton
+                    activeOpacity={1}
+                    onPress={() => navigation.navigate('ForgotPassword')}>
+                    <ForgotPasswordButtonText>
+                      Esqueceu a senha?
+                    </ForgotPasswordButtonText>
+                  </ForgotPasswordButton>
+                </Animatable.View>
               </Form>
             </Content>
           </Container>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
       <Footer>
-        <Button title="Continuar" enabled action={() => {}} />
+        <Animatable.View
+          animation="fadeInUp"
+          duration={300}
+          delay={900}
+          style={{width: '100%'}}>
+          <Button title="Continuar" enabled action={() => {}} />
+        </Animatable.View>
       </Footer>
     </>
   );
