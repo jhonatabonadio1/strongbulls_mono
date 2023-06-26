@@ -11,9 +11,9 @@ export const Container = styled.TouchableOpacity<ButtonProps>`
   justify-content: center;
   border-radius: ${RFValue(35)}px;
   align-items: center;
-  background-color: ${({theme}) => theme.colors.green};
+  background-color: ${({theme}) => theme.colors.primary};
   width: 100%;
-  border: 2px solid ${({theme}) => theme.colors.green};
+  border: 2px solid ${({theme}) => theme.colors.primary};
 
   ${({outline}) =>
     outline &&
@@ -24,11 +24,11 @@ export const Container = styled.TouchableOpacity<ButtonProps>`
 
 export const Title = styled.Text<ButtonProps>`
   font-family: ${({theme}) => theme.fonts.semibold};
-  color: ${({theme}) => theme.colors.black};
+  color: ${({theme}) => theme.colors.shape};
 
   ${({outline}) =>
     outline &&
     css`
-      color: ${({theme}) => theme.colors.green};
+      color: ${({theme}) => theme.colors.primary};
     `}
 `;

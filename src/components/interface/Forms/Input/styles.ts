@@ -17,7 +17,7 @@ export const InputContainer = styled.View`
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  border-bottom-width: 2px;
+  border-bottom-width: 1px;
   border-color: ${({theme}) => theme.colors.border};
 `;
 

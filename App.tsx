@@ -8,7 +8,7 @@ import {
 } from '@expo-google-fonts/poppins';
 import * as SplashScreen from 'expo-splash-screen';
 import React, {useCallback} from 'react';
-import {Text, TextInput} from 'react-native';
+import {StatusBar, Text, TextInput} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {enableScreens} from 'react-native-screens';
 import {ThemeProvider} from 'styled-components';
@@ -75,6 +75,7 @@ export default function App() {
 
   return (
     <GestureHandlerRootView style={{flex: 1}} onLayout={onLayoutRootView}>
+      <StatusBar barStyle="dark-content" />
       <ThemeProvider theme={appTheme}>
         <Routes />
       </ThemeProvider>

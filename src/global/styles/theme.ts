@@ -1,13 +1,13 @@
 export default {
   colors: {
     shape: '#FFFFFF',
-    title: '#f8f8f2',
-    text: '#f8f8f2',
+    title: '#222',
+    text: '#999',
     comment: '#999',
-    border: '#2E2E2E',
-    background: '#000',
+    border: '#DDD',
+    background: '#FFFFFF',
     black: '#222222',
-    green: '#50fa7b',
+    primary: '#222',
     red: '#ff5555',
     yellow: '#f1fa8c',
     purple: '#bd93f9',

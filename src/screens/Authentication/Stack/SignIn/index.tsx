@@ -1,61 +1,92 @@
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
+import {StatusBar} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 
 import {
   Container,
   Header,
   Footer,
-  Title,
-  TitleBold,
-  Description,
   Welcome,
   UserActions,
   Copyright,
-  MonoLogo,
+  TechLinkLogo,
   Logo,
+  Form,
+  ForgotPasswordButton,
+  ForgotPasswordButtonText,
+  Divider,
+  DividerLine,
+  DividerText,
 } from './styles';
 import logo from '../../../../assets/images/logo.png';
-import monoLogo from '../../../../assets/images/mono_logo.png';
-import slide1 from '../../../../assets/images/slides/1.jpg';
-import slide2 from '../../../../assets/images/slides/2.jpg';
+import techlinkLogo from '../../../../assets/images/logo_techlink.png';
 import {Button} from '../../../../components/interface/Forms/Button';
-
-const randomImage = Math.floor(Math.random() * 2);
+import {Input} from '../../../../components/interface/Forms/Input';
 
 export function SignIn() {
   const navigation = useNavigation();
   return (
-    <Container source={randomImage === 0 ? slide1 : slide2}>
-      <Header />
-
-      <Footer>
+    <Container>
+      <StatusBar barStyle="light-content" />
+      <Header>
         <Welcome>
           <Logo source={logo} />
-          <Title>
-            Bem-vindo(a) ao Time <TitleBold>No Boundaries</TitleBold>
-          </Title>
-          <Description>
-            Faça o login ou crie sua conta para acessar o aplicativo.
-          </Description>
         </Welcome>
-        <UserActions>
+      </Header>
+
+      <Footer>
+        <Form>
+          <Input
+            label="Qual seu e-mail?"
+            placeholder="E-mail"
+            autoCapitalize="none"
+            keyboardType="email-address"
+            style={{marginBottom: RFValue(12)}}
+          />
+
+          <Input
+            label="E sua senha?"
+            placeholder="Senha"
+            autoCapitalize="none"
+            passwordInput
+            keyboardType="email-address"
+            style={{marginBottom: RFValue(12)}}
+          />
+
+          <ForgotPasswordButton
+            activeOpacity={1}
+            onPress={() => navigation.navigate('ForgotPassword')}>
+            <ForgotPasswordButtonText>
+              Esqueceu a senha?
+            </ForgotPasswordButtonText>
+          </ForgotPasswordButton>
+
           <Button
-            title="Abrir conta"
+            title="Fazer login"
+            outline
             action={() => navigation.navigate('SignUpForm')}
             enabled
             style={{marginBottom: RFValue(12)}}
           />
+        </Form>
+
+        <Divider>
+          <DividerLine />
+          <DividerText>ou</DividerText>
+          <DividerLine />
+        </Divider>
+        <UserActions>
           <Button
-            title="Fazer login"
-            action={() => navigation.navigate('SignInForm')}
+            title="Abra sua conta"
+            action={() => navigation.navigate('SignUpForm')}
             enabled
-            outline
+            style={{marginBottom: RFValue(12)}}
           />
+          <Copyright>
+            <TechLinkLogo source={techlinkLogo} />
+          </Copyright>
         </UserActions>
-        <Copyright>
-          <MonoLogo source={monoLogo} />
-        </Copyright>
       </Footer>
     </Container>
   );

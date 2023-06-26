@@ -3,6 +3,7 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   Platform,
+  StatusBar,
   TouchableWithoutFeedback,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
@@ -22,11 +23,15 @@ export function SignUpForm() {
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={{flex: 1}}>
+        <StatusBar barStyle="dark-content" />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <Container>
             <Content>
               <Form>
-                <Animatable.View animation="fadeInLeft" duration={300}>
+                <Animatable.View
+                  animation="fadeInLeft"
+                  duration={300}
+                  delay={300}>
                   <Input
                     label="Qual o seu nome?"
                     placeholder="Nome completo"
@@ -36,7 +41,7 @@ export function SignUpForm() {
                 <Animatable.View
                   animation="fadeInLeft"
                   duration={300}
-                  delay={300}>
+                  delay={600}>
                   <Input
                     label="E o seu e-mail?"
                     placeholder="E-mail"
@@ -48,7 +53,7 @@ export function SignUpForm() {
                 <Animatable.View
                   animation="fadeInLeft"
                   duration={300}
-                  delay={600}>
+                  delay={900}>
                   <DateInput
                     date={date}
                     open={open}

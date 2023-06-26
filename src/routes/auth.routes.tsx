@@ -8,7 +8,6 @@ import {useTheme} from 'styled-components';
 
 import {SignIn} from '../screens/Authentication/Stack/SignIn';
 import {ForgotPassword} from '../screens/Authentication/Stack/SignIn/Forgot';
-import {SignInForm} from '../screens/Authentication/Stack/SignIn/SignInForm';
 import {SignUpForm} from '../screens/Authentication/Stack/SignUpForm';
 const {Navigator, Screen} = createStackNavigator();
 
@@ -54,14 +53,7 @@ export function AuthRoutes() {
   return (
     <Navigator>
       <Screen name="SignIn" component={SignIn} options={options} />
-      <Screen
-        name="SignInForm"
-        component={SignInForm}
-        options={{
-          ...headerStyle,
-          headerTitle: 'Login',
-        }}
-      />
+
       <Screen
         name="ForgotPassword"
         component={ForgotPassword}
