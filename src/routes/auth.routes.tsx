@@ -9,6 +9,7 @@ import {useTheme} from 'styled-components';
 import {SignIn} from '../screens/Authentication/Stack/SignIn';
 import {ForgotPassword} from '../screens/Authentication/Stack/SignIn/Forgot';
 import {SignUpForm} from '../screens/Authentication/Stack/SignUpForm';
+import {Category} from '../screens/Authentication/Stack/SignUpForm/Category';
 const {Navigator, Screen} = createStackNavigator();
 
 const options = {
@@ -68,6 +69,14 @@ export function AuthRoutes() {
         options={{
           ...headerStyle,
           headerTitle: 'Seus dados',
+        }}
+      />
+      <Screen
+        name="Category"
+        component={Category}
+        options={{
+          ...headerStyle,
+          headerTitle: 'Categoria',
         }}
       />
     </Navigator>

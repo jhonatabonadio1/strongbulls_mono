@@ -5,7 +5,7 @@ export const Container = styled.View``;
 
 export const Label = styled.Text`
   font-family: ${({theme}) => theme.fonts.semibold};
-  font-size: ${RFValue(18)}px;
+  font-size: ${RFValue(16)}px;
   margin-bottom: ${RFValue(6)}px;
   color: ${({theme}) => theme.colors.title};
 `;

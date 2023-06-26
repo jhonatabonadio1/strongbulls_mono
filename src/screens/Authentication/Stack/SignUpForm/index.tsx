@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   Keyboard,
@@ -13,10 +14,26 @@ import {Container, Form, Content, Footer} from './styles';
 import {Button} from '../../../../components/interface/Forms/Button';
 import {DateInput} from '../../../../components/interface/Forms/DateInput';
 import {Input} from '../../../../components/interface/Forms/Input';
+import {Radio} from '../../../../components/interface/Forms/Radio';
 
 export function SignUpForm() {
-  const [date, setDate] = useState(new Date());
+  const navigation = useNavigation();
+
   const [open, setOpen] = useState(false);
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [date, setDate] = useState(new Date());
+  const [gender, setGender] = useState('');
+
+  function handleNavigate() {
+    navigation.navigate('Category', {
+      date,
+      email,
+      gender,
+      name,
+    });
+  }
 
   return (
     <>
@@ -35,6 +52,8 @@ export function SignUpForm() {
                   <Input
                     label="Qual o seu nome?"
                     placeholder="Nome completo"
+                    value={name}
+                    onChangeText={setName}
                     style={{marginBottom: RFValue(12)}}
                   />
                 </Animatable.View>
@@ -46,6 +65,8 @@ export function SignUpForm() {
                     label="E o seu e-mail?"
                     placeholder="E-mail"
                     autoCapitalize="none"
+                    value={email}
+                    onChangeText={setEmail}
                     keyboardType="email-address"
                     style={{marginBottom: RFValue(12)}}
                   />
@@ -72,8 +93,23 @@ export function SignUpForm() {
                 <Animatable.View
                   animation="fadeInLeft"
                   duration={300}
-                  delay={900}
-                />
+                  delay={1200}>
+                  <Radio
+                    label="E o seu gênero?"
+                    selected={gender}
+                    onSelect={value => setGender(value)}
+                    options={[
+                      {
+                        id: 'M',
+                        name: 'Masculino',
+                      },
+                      {
+                        id: 'F',
+                        name: 'Feminino',
+                      },
+                    ]}
+                  />
+                </Animatable.View>
               </Form>
             </Content>
           </Container>
@@ -83,9 +119,13 @@ export function SignUpForm() {
         <Animatable.View
           animation="fadeInUp"
           duration={300}
-          delay={1200}
+          delay={1500}
           style={{width: '100%'}}>
-          <Button title="Continuar" enabled action={() => {}} />
+          <Button
+            title="Continuar"
+            enabled={(name.length && email.length && gender.length) !== 0}
+            action={handleNavigate}
+          />
         </Animatable.View>
       </Footer>
     </>
