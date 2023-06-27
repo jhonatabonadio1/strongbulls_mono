@@ -1,3 +1,4 @@
+import {useNavigation, useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   Keyboard,
@@ -19,15 +20,36 @@ import {
 } from './styles';
 import {Button} from '../../../../../components/interface/Forms/Button';
 
+type Params = {
+  name: string;
+  email: string;
+  date: Date;
+  gender: string;
+};
+
 export function Category() {
+  const navigation = useNavigation();
+  const route = useRoute();
+
+  const {name, email, date, gender} = route.params as Params;
+
   const [category, setCategory] = useState('');
+
+  function handleNavigate() {
+    navigation.navigate('Sizes', {
+      name,
+      email,
+      date,
+      gender,
+      category,
+    });
+  }
 
   return (
     <>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={{flex: 1}}>
-        <StatusBar barStyle="dark-content" />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <Container>
             <Content>
@@ -89,7 +111,11 @@ export function Category() {
           duration={300}
           delay={1200}
           style={{width: '100%'}}>
-          <Button title="Continuar" enabled action={() => {}} />
+          <Button
+            title="Continuar"
+            enabled={category.length !== 0}
+            action={handleNavigate}
+          />
         </Animatable.View>
       </Footer>
     </>

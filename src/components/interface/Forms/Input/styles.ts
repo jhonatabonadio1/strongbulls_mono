@@ -31,7 +31,7 @@ export const InputField = styled.TextInput`
 export const ShowPasswordButton = styled.TouchableOpacity``;
 
 export const Icon = styled(Feather)`
-  color: ${({theme}) => theme.colors.shape};
+  color: ${({theme}) => theme.colors.title};
 
   font-size: ${RFValue(18)}px;
 `;

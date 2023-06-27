@@ -40,7 +40,6 @@ export function SignUpForm() {
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={{flex: 1}}>
-        <StatusBar barStyle="dark-content" />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <Container>
             <Content>

@@ -21,7 +21,6 @@ export function ForgotPassword() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <Container>
-        <StatusBar barStyle="dark-content" />
         <Content>
           <Form>
             <Animatable.View animation="fadeInLeft" duration={300} delay={300}>

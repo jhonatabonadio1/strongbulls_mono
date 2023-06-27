@@ -84,6 +84,6 @@ export const Copyright = styled.View`
 `;
 
 export const TechLinkLogo = styled(FastImage)`
-  width: ${RFValue(70)}px;
+  width: ${RFValue(71)}px;
   height: ${RFValue(16)}px;
 `;

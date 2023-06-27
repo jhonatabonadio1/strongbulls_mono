@@ -10,6 +10,8 @@ import {SignIn} from '../screens/Authentication/Stack/SignIn';
 import {ForgotPassword} from '../screens/Authentication/Stack/SignIn/Forgot';
 import {SignUpForm} from '../screens/Authentication/Stack/SignUpForm';
 import {Category} from '../screens/Authentication/Stack/SignUpForm/Category';
+import {Password} from '../screens/Authentication/Stack/SignUpForm/Password';
+import {Sizes} from '../screens/Authentication/Stack/SignUpForm/Sizes';
 const {Navigator, Screen} = createStackNavigator();
 
 const options = {
@@ -77,6 +79,22 @@ export function AuthRoutes() {
         options={{
           ...headerStyle,
           headerTitle: 'Categoria',
+        }}
+      />
+      <Screen
+        name="Sizes"
+        component={Sizes}
+        options={{
+          ...headerStyle,
+          headerTitle: 'Peso e altura',
+        }}
+      />
+      <Screen
+        name="Password"
+        component={Password}
+        options={{
+          ...headerStyle,
+          headerTitle: 'Senha',
         }}
       />
     </Navigator>

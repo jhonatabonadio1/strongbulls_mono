@@ -39,7 +39,8 @@ export function Input({
         <InputField
           {...rest}
           placeholderTextColor={theme.colors.comment}
-          secureTextEntry={!!show}
+          secureTextEntry={!show}
+          keyboardType="default"
         />
         <ShowPasswordButton activeOpacity={1} onPress={() => setShow(!show)}>
           {!show ? <Icon name="eye-off" /> : <Icon name="eye" />}
