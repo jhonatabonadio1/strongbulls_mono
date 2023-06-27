@@ -1,5 +1,5 @@
 import React from 'react';
-import {Keyboard, StatusBar, TouchableWithoutFeedback} from 'react-native';
+import {Keyboard, TouchableWithoutFeedback} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 import {useTheme} from 'styled-components';

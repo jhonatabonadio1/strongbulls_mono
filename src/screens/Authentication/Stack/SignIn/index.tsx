@@ -1,7 +1,6 @@
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {
-  StatusBar,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,

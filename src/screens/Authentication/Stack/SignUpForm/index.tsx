@@ -4,7 +4,6 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   Platform,
-  StatusBar,
   TouchableWithoutFeedback,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
