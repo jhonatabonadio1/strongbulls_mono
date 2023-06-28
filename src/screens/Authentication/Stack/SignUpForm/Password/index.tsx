@@ -1,3 +1,4 @@
+import {useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   Keyboard,
@@ -11,11 +12,42 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {Container, Form, Content, Footer} from './styles';
 import {Button} from '../../../../../components/interface/Forms/Button';
 import {Input} from '../../../../../components/interface/Forms/Input';
+import {useAuth} from '../../../../../contexts/AuthContext';
+
+type Params = {
+  name: string;
+  email: string;
+  date: Date;
+  gender: string;
+  category: string;
+  height: string;
+  weight: string;
+};
 
 export function Password() {
+  const route = useRoute();
+  const {signIn} = useAuth();
   const [password, setPassword] = useState('');
 
-  function handleNavigate() {}
+  const {name, weight, category, date, email, gender, height} =
+    route.params as Params;
+
+  function handleSignIn() {
+    const user = {
+      id: '1',
+      name,
+      email,
+      gender,
+      date,
+      category,
+      height,
+      weight,
+    };
+
+    signIn({
+      user,
+    });
+  }
 
   return (
     <>
@@ -53,7 +85,7 @@ export function Password() {
           <Button
             title="Finalizar cadastro"
             enabled={password.length !== 0}
-            action={handleNavigate}
+            action={handleSignIn}
           />
         </Animatable.View>
       </Footer>

@@ -6,6 +6,7 @@ export default {
     comment: '#999',
     border: '#DDD',
     background: '#FFFFFF',
+    iconBackgroundOpacity: 'rgba(255,255,255,0.12)',
     black: '#222222',
     primary: '#222',
     red: '#ff5555',

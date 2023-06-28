@@ -24,4 +24,6 @@ export type RootStackParamList = {
     height: string;
     weight: string;
   };
+
+  Home: undefined;
 };

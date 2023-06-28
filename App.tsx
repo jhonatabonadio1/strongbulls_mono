@@ -13,6 +13,7 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {enableScreens} from 'react-native-screens';
 import {ThemeProvider} from 'styled-components';
 
+import {AppProvider} from './src/contexts';
 import theme from './src/global/styles/theme';
 import {Routes} from './src/routes';
 
@@ -79,9 +80,11 @@ export default function App() {
         barStyle="light-content"
         backgroundColor={theme.colors.primary}
       />
-      <ThemeProvider theme={appTheme}>
-        <Routes />
-      </ThemeProvider>
+      <AppProvider>
+        <ThemeProvider theme={appTheme}>
+          <Routes />
+        </ThemeProvider>
+      </AppProvider>
     </GestureHandlerRootView>
   );
 }
