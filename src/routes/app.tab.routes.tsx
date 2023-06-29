@@ -2,10 +2,11 @@ import {AntDesign as Feather} from '@expo/vector-icons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import {View} from 'react-native';
+import {getBottomSpace} from 'react-native-iphone-x-helper';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {useTheme} from 'styled-components';
 
-import {Home} from '../screens/Autheticated/Tab/Home';
+import {Home} from '../screens/App/Tabs/Home';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 
@@ -13,16 +14,21 @@ export function TabRoutes() {
   const theme = useTheme();
   return (
     <Navigator
-      screenOptions={({route}) => ({
+      screenOptions={() => ({
         tabBarActiveTintColor: theme.colors.shape,
         tabBarInactiveTintColor: theme.colors.comment,
         tabBarStyle: {
           backgroundColor: theme.colors.primary,
           position: 'absolute',
-          bottom: 20,
-
+          bottom: getBottomSpace() ? getBottomSpace() : 20,
+          justifyContent: 'center',
+          alignItems: 'center',
           marginHorizontal: 20,
+          height: 54,
           borderRadius: 50,
+        },
+        tabBarItemStyle: {
+          height: 54,
         },
         tabBarShowLabel: false,
         headerShown: false,

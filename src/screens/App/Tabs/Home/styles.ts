@@ -11,6 +11,7 @@ export const Container = styled.View`
 
 export const Header = styled.View`
   padding: ${RFValue(16)}px 24px;
+
   height: ${RFPercentage(29)}px;
   background-color: ${({theme}) => theme.colors.primary};
 `;
@@ -102,11 +103,16 @@ export const BlockSmallText = styled.Text`
 `;
 export const Content = styled.ScrollView`
   flex: 1;
+  height: 100%;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   margin-top: -${RFPercentage(2)}px;
+
   background-color: ${({theme}) => theme.colors.background};
   padding: ${RFValue(12)}px 24px;
+  margin-bottom: -1000px;
+  padding-bottom: 1000px;
+  overflow: hidden;
 `;
 
 export const Title = styled.Text`
